@@ -141,6 +141,8 @@ LIBHTS_OBJS = \
 	faidx.o \
 	hfile.o \
 	hfile_net.o \
+	hfile_gcs.o \
+	hfile_s3.o \
 	hts.o \
 	hts_os.o\
 	md5.o \
@@ -209,6 +211,9 @@ config.h:
 	echo '#define HAVE_FSEEKO 1' >> $@
 	echo '#define HAVE_DRAND48 1' >> $@
 	echo '#define HAVE_LIBCURL 1' >> $@
+	echo '#define HAVE_COMMONCRYPTO 1' >> $@
+	echo '#define ENABLE_GCS 1' >> $@
+	echo '#define ENABLE_S3 1' >> $@
 
 # And similarly for htslib.pc.tmp ("pkg-config template").  No dependency
 # on htslib.pc.in listed, as if that file is newer the usual way to regenerate
